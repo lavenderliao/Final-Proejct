@@ -3,7 +3,7 @@
 ## Team member: Anna Zhang and Peiyu Liao
 
 ## The Big Idea 
-What is the main idea of your project? What topics will you explore and what will you generate? What is your minimum viable product? What is a stretch goal?
+We plan to create a website page that allows users to enter a word, and in return get ten most recent posts and the text analysis results on these posts. Our minimum viable product is ... Our stretch goal is ....
 
 ## Learning Goals
 ### Shared Goals
@@ -13,6 +13,8 @@ What is the main idea of your project? What topics will you explore and what wil
 
 ## Implementation Plan
 this will probably be pretty vague initially. Perhaps at this early juncture you will have identified a library or a framework that you think will be useful for your project. If you don't have any idea how you will implement your project, provide a rough plan for how you will determine this information.
+
+Library: Tweety, Flask
 
 ## Project schedule 
 
