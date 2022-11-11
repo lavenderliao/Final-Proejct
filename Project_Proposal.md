@@ -47,6 +47,6 @@ A big risk would be not able to connect to the Twitter tweets and other required
 
 ## Additional Course Content
 
-I think it would be great to cover ways of locating the words entered by the user to hashtages on Twitter, because people meaningly expect the searches on Twitter to be based on hashtages, which direct them to the topics they are interested in.
+I think it would be great to cover ways of locating the words entered by the user in hashtages on Twitter, because people meaningly expect the searches on Twitter to be based on hashtages, which direct them to the topics they are interested in.
 
 
