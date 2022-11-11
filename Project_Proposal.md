@@ -3,7 +3,7 @@
 ## Team member: Anna Zhang and Peiyu Liao
 
 ## The Big Idea 
-What is the main idea of your project? What topics will you explore and what will you generate? What is your minimum viable product? What is a stretch goal?
+We plan to create a website page that allows users to enter a word, and in return get ten most recent posts and the text analysis results on these posts. Our minimum viable product is ... Our stretch goal is ....
 
 For our final project, we are looking to create a website that would analyze twitter tweets. When an user inputs a word into the website, the website will return the user with 10 most recent Twitter tweets that includes the word and text analysis for these 10 tweets, including analysis such as similarity between these tweets, words with the most frequency, and sensitivity. This project aims to explore text analysis in great depth while at the same time offers the opportunity to practice website building. Our minimum viable product will be a plain website that holds all required functions to allow users to view basic text analysis results of Twitter tweets after inputing a word. Our stretch goal would be to also offer the function that would recommend users with similar articles from news souces that match the key words in Twitter tweets.
 
@@ -19,6 +19,8 @@ Peiyu:
 
 ## Implementation Plan
 this will probably be pretty vague initially. Perhaps at this early juncture you will have identified a library or a framework that you think will be useful for your project. If you don't have any idea how you will implement your project, provide a rough plan for how you will determine this information.
+
+Library: Tweety, Flask
 
 ## Project schedule 
 
