@@ -9,7 +9,8 @@ For our final project, we are looking to create a website that would analyze twi
 
 ## Learning Goals
 ### Shared Goals
-1. As a team, our mean learning goal is to familiar ourselves with all the text analysis methods learned in class, while also conducting more research that would take our text analysis knowledge further. The mean reason why we chose to do the final project focusing on text anlaysis is because we have realized the importance of media in modern days. Media has become the primary source of information; thus, understanding and be able to conduct text analysis of documents in the future will help us to be more knowledgable of the information we receive.
+
+As a team, our mean learning goal is to familiar ourselves with all the text analysis methods learned in class, while also conducting more research that would take our text analysis knowledge further. The mean reason why we chose to do the final project focusing on text anlaysis is because we have realized the importance of media in modern days. Media has become the primary source of information; thus, understanding and be able to conduct text analysis of documents in the future will help us to be more knowledgable of the information we receive.
 
 ### Individual Goals
 
