@@ -3,7 +3,7 @@
 ## Team member: Anna Zhang and Peiyu Liao
 
 ## The Big Idea 
-We plan to create a website page that allows users to enter a word, and in return get ten most recent posts and the text analysis results on these posts. Our minimum viable product is ... Our stretch goal is ....
+We plan to create a website page that allows users to enter a word, and in return get ten most recent posts and the text analysis results on these posts. Our minimum viable product is that our website runs smoothly. Our stretch goal is self-learning from https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/ and adding additional features to our basic program.
 
 ## Learning Goals
 ### Shared Goals
@@ -12,9 +12,8 @@ We plan to create a website page that allows users to enter a word, and in retur
 1. 
 
 ## Implementation Plan
-this will probably be pretty vague initially. Perhaps at this early juncture you will have identified a library or a framework that you think will be useful for your project. If you don't have any idea how you will implement your project, provide a rough plan for how you will determine this information.
 
-Library: Tweety, Flask
+We envision that we are going to use tweety and Flask library to build our project. We are going to figure out what other libraries we will use when we make specific step-by-step plan for coding.
 
 ## Project schedule 
 
@@ -25,9 +24,13 @@ Library: Tweety, Flask
 5. 12/06 Code Submission
 
 ## Collaboration plan
-How do you plan to collaborate with your teammates on this project? Will you split tasks up, complete them independently, and then integrate? Will you pair program the entire thing? Make sure to articulate your plan for successfully working together as a team. This might also include information about any software development methodologies you plan to use (e.g. agile development). Make sure to make clear why you are choosing this particular organizational structure.
 
-We plan to split tasks up, complete them independently and then integrate. Through working together on Assignment 3, we think this is the way that works for us. 
+We plan to split tasks up, complete them independently and then integrate. Through working together on Assignment 3, we think this is the way that works for us. We will try to implement agile development during this project. We will go through following steps in agile development:
+1. Careful analysis of requirements for this project and set our expectations
+2. Make plan and divide tasks based on what we expect to do
+3. Write code and test code until it runs smoothly, help each other whenever needed
+4. Finish our tasks and give feedback to each other, then ask for feedback from other users
+5. Compare our project with the key metrics in the instruction to make sure we meet all the requirements
 
 ## Risks
 What do you view as the biggest risks to the success of this project?
