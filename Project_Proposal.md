@@ -43,7 +43,7 @@ We will go through following steps in agile development:
 
 ## Risks
 
-A big risk would be not able to connet to the Twitter tweets and other required sources appropriately. During assignment 3, because of connection issues we have encountered multiple instances not not being able to run the code sucessfully. Therefore for this project, we should be very careful in choosing the sources and the packages we use. It is also really difficult to debug with the same eyes. We encountered problems before that both of us got stuck and cannot realize that we only need a simple change to adjust the bug. Thus we should always make sure to ask each other for help whenever we are not sure of the problem, and also ask professor for help when in need. 
+A big risk would be not able to connect to the Twitter tweets and other required sources appropriately. During assignment 3, because of connection issues we have encountered multiple instances not not being able to run the code sucessfully. Therefore for this project, we should be very careful in choosing the sources and the packages we use. It is also really difficult to debug with the same eyes. We encountered problems before that both of us got stuck and cannot realize that we only need a simple change to adjust the bug. Thus we should always make sure to ask each other for help whenever we are not sure of the problem, and also ask professor for help when in need. 
 
 ## Additional Course Content
 
