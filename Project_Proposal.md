@@ -9,7 +9,9 @@ We plan to create a website page that allows users to enter a word, and in retur
 ### Shared Goals
 1. 
 ### Individual Goals
+#### Peiyu
 1. 
+#### Anna
 
 ## Implementation Plan
 
@@ -39,3 +41,4 @@ What do you view as the biggest risks to the success of this project?
 
 ## Additional Course Content
 What are some topics that we might cover in class that you think would be especially helpful for your project?
+We could not think of anything for now.
