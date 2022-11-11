@@ -14,9 +14,9 @@ As a team, our mean learning goal is to familiar ourselves with all the text ana
 
 ### Individual Goals
 
-Anna: my individual learning goals is to use this oppportunity to understand the common themes and trends of Twitter tweets based on key words. Unlike other forms of information such as the news, websites, and books, Twitter tweets tend to be more free and opinionated. Because I use Twitter quite often to obtain information of the topics I am interested in, I think this project would provide me insights into some of the unique characteristics of Twitter tweets.
+Anna: my individual learning goal is to use this oppportunity to understand the common themes and trends of Twitter tweets based on key words. Unlike other forms of information such as the news, websites, and books, Twitter tweets tend to be more free and opinionated. Because I use Twitter quite often to obtain information of the topics I am interested in, I think this project would provide me insights into some of the unique characteristics of Twitter tweets.
 
-Peiyu: my individual learning goals is to improve my coding skill, expand my knowledge in coding, and learn to apply what I learned in this class into a real-world project that might solve the problem I would encounter in my future career. I am interested in marketing, so using python to analyze social media would be something really practical for me in the future.
+Peiyu: my individual learning goals are to improve my coding skill, expand my knowledge in coding, and learn to apply what I learned in this class into a real-world project that might solve the problem I would encounter in my future career. I am interested in marketing, so using python to analyze social media would be something really practical for me in the future.
 
 ## Implementation Plan
 
