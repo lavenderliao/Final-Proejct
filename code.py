@@ -166,10 +166,16 @@ def movie_analysis(movie):
     Frequency = word_frequency(movie)
     sentiment_result = sentiment(movie)
     similarity_result = similarity(movie)
-    return ('The rating is' + rating,
-    'The most common words are'+ Frequency,
-    'The sentiment analysis results are' + sentiment_result,
-    'The similarity result are'+ similarity_result)
+    if rating > 7 and sentiment_result['pos'] > 0.05:
+        return ('Recommend!'+'The rating is' + rating,
+        'The most common words are'+ Frequency,
+        'The sentiment analysis results are' + sentiment_result,
+        'The similarity result are'+ similarity_result)
+    else:
+        return ('Not Recommend!'+'The rating is' + str(rating),
+        'The most common words are', Frequency,
+        'The sentiment analysis results are' , sentiment_result,
+        'The similarity result are', similarity_result)
 
 def main():
     print(movie_analysis('Ticket to Paradise'))
