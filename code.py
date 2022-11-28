@@ -1,4 +1,37 @@
 # Data source
+
+# Note: 
+# The IMDB API sometimes does not work and will show 'IndexError: list index out of range', 
+# just need to rerun a couple of times, one of the times would work
+
+# The result would look like this:
+# Not Recommend!
+# The rating is 6.2
+# The sentiment analysis results are {'neg': 0.075, 'neu': 0.667, 'pos': 0.257, 'compound': 1.0}
+# The similarity result are 58
+# The most common words are
+#          31
+# roberts          22
+# film     21
+# clooney          21
+# movie    14
+# romantic         12
+# paradise         12
+# good     10
+# two      9
+# ticket   9
+# comedy   8
+# one      7
+# julia    7
+# get      7
+# actors   7
+# will     6
+# script   6
+# made     6
+# love     6
+# great    6
+
+
 from imdb import Cinemagoer
 import sys
 from unicodedata import category
@@ -134,13 +167,13 @@ def print_most_common(hist, num=10):
     t = most_common(hist)
     # print('The most common words are:')
     for freq, word in t[:num]:
-        return(word, '\t', freq)
+        print(word, '\t', freq)
 
 def word_frequency(movie):
     comment = comments(movie)
     hist = process_text(comment)
-    common_list = print_most_common(hist,10)
-    return common_list
+    t = most_common(hist, True)
+    return t
 
 # sentiment analysis
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -163,22 +196,28 @@ def similarity(movie):
 
 def movie_analysis(movie):
     rating = get_point(movie)
-    Frequency = word_frequency(movie)
+    t = word_frequency(movie)
     sentiment_result = sentiment(movie)
     similarity_result = similarity(movie)
     if rating > 7 and sentiment_result['pos'] > 0.05:
-        return ('Recommend!'+'The rating is' + rating,
-        'The most common words are'+ Frequency,
-        'The sentiment analysis results are' + sentiment_result,
-        'The similarity result are'+ similarity_result)
+        print('Recommend!')
+        print('The rating is ' + str(rating))
+        print('The sentiment analysis results are' + sentiment_result)
+        print('The similarity result are'+ similarity_result)
+        print('The most common words are')
+        for freq, word in t[0:20]:
+            print(word, '\t', freq)
     else:
-        return ('Not Recommend!'+'The rating is' + str(rating),
-        'The most common words are', Frequency,
-        'The sentiment analysis results are' , sentiment_result,
-        'The similarity result are', similarity_result)
+        print('Not Recommend!')
+        print('The rating is ' + str(rating))
+        print('The sentiment analysis results are', sentiment_result)
+        print('The similarity result are', similarity_result)
+        print('The most common words are')
+        for freq, word in t[0:20]:
+            print(word, '\t', freq)
 
 def main():
-    print(movie_analysis('Ticket to Paradise'))
+    movie_analysis('Ticket to Paradise')
 
 if __name__ == "__main__":
     main()
