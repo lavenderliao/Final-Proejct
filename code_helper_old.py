@@ -40,47 +40,36 @@ from unicodedata import category
 ia = Cinemagoer()
 
 def get_id(movie):
-    """
-    movie: string
-    """
-    search_result = ia.search_movie(movie)
-    print(search_result)
-    if len(search_result) == 0:
-        print('Movie not found!')
-        return
-    else:
-        movie_data = search_result[0] 
+    # search movie
+    movie_data = ia.search_movie(str(movie))[0]
     movie_id = movie_data.movieID
     return movie_id
 
-def get_point(movie_id):
+def get_point(movie):
+    movie_id = get_id(movie)
     series = ia.get_movie(movie_id)
     rating = series.data['rating']
     return rating
 
 
 # get comments
-def get_comment_list(movie_id):
-    '''
-    return ... data type, parameters
-    '''
-    movie_reviews = ia.get_movie_reviews(movie_id)
-    # check length of movie reviews
+def comment_list(movie):
+    movie_id = get_id(movie)
+    movie_reviews = ia.get_movie_reviews(str(movie_id))
     comments = []
     for i in range(0,10):
         x = movie_reviews['data']['reviews'][i]['content']
         comments.append(x)
     return comments
-    
 
-def get_comments_str(comment_list):
-    """Return all reviews in one string
-    
-    movie: string
-
-    return: string
-    """
-    comment_text = ''.join(comment_list)
+def comments(movie):
+    movie_id = get_id(movie)
+    movie_reviews = ia.get_movie_reviews(str(movie_id))
+    comments = []
+    for i in range(0,10):
+        x = movie_reviews['data']['reviews'][i]['content']
+        comments.append(x)
+        comment_text = ''.join(comments)
     return comment_text
 
 # word frequencies
@@ -180,42 +169,36 @@ def print_most_common(hist, num=10):
     for freq, word in t[:num]:
         print(word, '\t', freq)
 
-def word_frequency(comment_str):
-    """
-    comment_str: a string of all comments
-    Return list of (frequency, word) pairs
-    """
-    hist = process_text(comment_str)
+def word_frequency(movie):
+    comment = comments(movie)
+    hist = process_text(comment)
     t = most_common(hist, True)
     return t
 
 # sentiment analysis
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-def sentiment(comment_str):
-    score = SentimentIntensityAnalyzer().polarity_scores(comment_str)
+def sentiment(movie):
+    sentence = comments(movie)
+    score = SentimentIntensityAnalyzer().polarity_scores(sentence)
     return score
 
 # similarity of two comments
 from thefuzz import fuzz
 import random
-def get_similarity(comment_list):
-    """
-    compare the similarity of the first two comments
-    Return similarity score
-    """
-    first, second = comment_list[:2]
-    result = fuzz.token_set_ratio(first, second)
+def similarity(movie):
+    comments = comment_list(movie)
+    first_comment = random.choice(comments)
+    second_comment = random.choice(comments)
+    result = fuzz.token_set_ratio(first_comment,second_comment)
     return result
 
 
-def movie_analysis(movie_id):
-    rating = get_point(movie_id)
-    comment_list = get_comment_list(movie_id)
-    comment_str = get_comments_str(comment_list)
-    t = word_frequency(comment_str)
-    sentiment_result = sentiment(comment_str)
-    similarity_result = get_similarity(comment_list)
+def movie_analysis(movie):
+    rating = get_point(movie)
+    t = word_frequency(movie)
+    sentiment_result = sentiment(movie)
+    similarity_result = similarity(movie)
     if rating > 7 and sentiment_result['pos'] > 0.05:
         print('Recommend!')
         print('The rating is ' + str(rating))
@@ -234,12 +217,7 @@ def movie_analysis(movie_id):
             print(word, '\t', freq)
 
 def main():
-    # movie_analysis('Ticket to Paradise')
-    # movie_title = 'Titanic'
-    # movie_id = get_id(movie_title)
-    # print(movie_id)
-    movie_id = '14109724'
-    movie_analysis(movie_id)
+    movie_analysis('Ticket to Paradise')
 
 if __name__ == "__main__":
     main()

@@ -16,5 +16,11 @@ def get_movie():
     else:
         return render_template("hello.html")
 
+
+@app.route('/test')
+def display():
+    t = [('a', 10), ('b', 9), ('c', 8), ('d', 7)]
+    return render_template('test_page.html', freq_word_list = t[:3])
+
 if __name__ == "__main__":
     app.run(debug=True)
