@@ -14,7 +14,19 @@
 </head>
 
 <body>
-    <p class="red"> {{result}} </p>
+    <p class="red"> 
+        {{recommendation_result}}
+        The rating is {{rating}}.
+        The sentiment analysis results are {{sentiment_result}}.
+        The similarity result are {{similarity_result}}.
+        The most common words are
+        {% for pair in freq_word_list %}
+        <li>
+            {{ pair[1] }}: {{ pair[0] }}
+        </li>
+        {% endfor %}
+    
+    </p>
 </body>
 
 </html>

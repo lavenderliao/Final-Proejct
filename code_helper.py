@@ -39,20 +39,21 @@ from unicodedata import category
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
-def get_id(movie):
-    """
-    movie: string
-    """
-    search_result = ia.search_movie(movie)
-    print(search_result)
-    if len(search_result) == 0:
-        print('Movie not found!')
-        return
-    else:
-        movie_data = search_result[0] 
-    movie_id = movie_data.movieID
-    return movie_id
+# def get_id(movie):
+#     """
+#     movie: string
+#     """
+#     search_result = ia.search_movie(movie)
+#     print(search_result)
+#     if len(search_result) == 0:
+#         print('Movie not found!')
+#         return
+#     else:
+#         movie_data = search_result[0] 
+#     movie_id = movie_data.movieID
+#     return movie_id
 
+# get movie rating
 def get_point(movie_id):
     series = ia.get_movie(movie_id)
     rating = series.data['rating']
@@ -62,14 +63,21 @@ def get_point(movie_id):
 # get comments
 def get_comment_list(movie_id):
     '''
-    return ... data type, parameters
+    Return all reviews
+    Input: string
+    Output: list
     '''
     movie_reviews = ia.get_movie_reviews(movie_id)
-    # check length of movie reviews
+    length = len(movie_reviews)
     comments = []
-    for i in range(0,10):
-        x = movie_reviews['data']['reviews'][i]['content']
-        comments.append(x)
+    if length <= 11:
+        for i in range(0,length):
+            x = movie_reviews['data']['reviews'][i]['content']
+            comments.append(x)
+    if length > 11:
+        for i in range(0,10):
+            x = movie_reviews['data']['reviews'][i]['content']
+            comments.append(x)
     return comments
     
 
@@ -193,12 +201,17 @@ def word_frequency(comment_str):
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 def sentiment(comment_str):
+    """
+    Return sentiment analysis score on the comments
+    input: comments in string
+    output: score in number
+    """
     score = SentimentIntensityAnalyzer().polarity_scores(comment_str)
     return score
 
 # similarity of two comments
 from thefuzz import fuzz
-import random
+
 def get_similarity(comment_list):
     """
     compare the similarity of the first two comments
@@ -208,30 +221,30 @@ def get_similarity(comment_list):
     result = fuzz.token_set_ratio(first, second)
     return result
 
+def get_recommendation(movie_id):
+    """
+    return recommend movie or not
+    input: movie id in string
+    output: recommend or not recommend in string
+    """
+    rating = get_point(movie_id)
+    comment_list = get_comment_list(movie_id)
+    comment_str = get_comments_str(comment_list)
+    sentiment_result = sentiment(comment_str)
+    if rating > 7 and sentiment_result['pos'] > 0.05:
+        return('Recommend!')
+    else:
+        return('Not Recommend!')
 
 def movie_analysis(movie_id):
     rating = get_point(movie_id)
     comment_list = get_comment_list(movie_id)
     comment_str = get_comments_str(comment_list)
-    t = word_frequency(comment_str)
+    freq_word_list = word_frequency(comment_str)
     sentiment_result = sentiment(comment_str)
     similarity_result = get_similarity(comment_list)
-    if rating > 7 and sentiment_result['pos'] > 0.05:
-        print('Recommend!')
-        print('The rating is ' + str(rating))
-        print('The sentiment analysis results are' + sentiment_result)
-        print('The similarity result are'+ similarity_result)
-        print('The most common words are')
-        for freq, word in t[0:20]:
-            print(word, '\t', freq)
-    else:
-        print('Not Recommend!')
-        print('The rating is ' + str(rating))
-        print('The sentiment analysis results are', sentiment_result)
-        print('The similarity result are', similarity_result)
-        print('The most common words are')
-        for freq, word in t[0:20]:
-            print(word, '\t', freq)
+    recommendation_result = get_recommendation(movie_id)
+    return rating, freq_word_list, sentiment_result, similarity_result, recommendation_result
 
 def main():
     # movie_analysis('Ticket to Paradise')
