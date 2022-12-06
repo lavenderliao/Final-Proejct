@@ -231,7 +231,7 @@ def get_recommendation(movie_id):
     comment_list = get_comment_list(movie_id)
     comment_str = get_comments_str(comment_list)
     sentiment_result = sentiment(comment_str)
-    if rating > 7 and sentiment_result['pos'] > 0.05:
+    if rating > 7 and sentiment_result['compound'] > 0.8:
         return('Recommend!')
     else:
         return('Not Recommend!')
