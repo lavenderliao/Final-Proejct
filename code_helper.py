@@ -55,6 +55,11 @@ ia = Cinemagoer()
 
 # get movie rating
 def get_point(movie_id):
+    """
+    Return rating of the movie
+    input: movie_id, string
+    output: rating, string
+    """
     series = ia.get_movie(movie_id)
     rating = series.data['rating']
     return rating
