@@ -3,7 +3,7 @@ Created by Anna & Peiyu
 
 Hi, welcome! We have created an website for text analysis on IMDB movie reviews :)
 
-Python Movie IMDB search software is a created website that would offer users with text analysis, including sentimental analysisi, similarity and most common words for IMDB movie reviews.
+Python Movie IMDB search software is a created website that would offer users with text analysis, including sentimental analysis, similarity and most common words for IMDB movie reviews.
 
 To use our code for your searches on movie reviews, here are the instructions and a few things to be aware of!
 
