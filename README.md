@@ -19,7 +19,7 @@ Flask:
 
 # Instructions / How the code runs
 
-The project maily consists of three files: code_helper.py, app.py and the templates for creating the webste
+The project maily consists of three files: code_helper.py, app.py and the templates for creating the website
 
 **Code_helper.py:-**
 
