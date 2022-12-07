@@ -21,7 +21,7 @@ Flask:
 
 The project maily consists of three files: code_helper.py, app.py and the templates for creating the website
 
-**Code_helper.py:-**
+**Code_helper.py:**
 
 code_helper.py returns functions associated with generating text analysis results. The functions within the files would offer the following:
 1. Wether the movie is recommended.
@@ -32,19 +32,19 @@ code_helper.py returns functions associated with generating text analysis result
 
 The function movie_analysis would return the summary involving all results of text analysis included in our system.
 
-**app.py:-**
+**app.py:**
 
 app.py would load the working website that could return the results generated from code_helper.py. When you run this file, a website address would appear in the terminal, and that is where you could access our website.
 
 The file uses Flask for creating the website and also uses the funciton movie_analysis to return the results
 
-**Important:-** Our system uses IMDB movie ids for searches. Thus, when searching for a movie on our website, please use the IMDB movie id of the film you are looking for. To find the movie id, you may search a movie on the IMDb website, and then find the number after "tt" shown in the website address. 
+**Important:** Our system uses IMDB movie ids for searches. Thus, when searching for a movie on our website, please use the IMDB movie id of the film you are looking for. To find the movie id, you may search a movie on the IMDb website, and then find the number after "tt" shown in the website address. 
 
 For example, when you search for movie "Titanic" on IMDb, the website address is https://www.imdb.com/title/tt0120338/?ref_=nv_sr_srsg_0 
 
 In this case, the movie_id would be 0120338
 
-**templates:-**
+**templates:**
 
 The html templates within the template folders are created for creating the website pages. Please do not change them when running the python files.
 
